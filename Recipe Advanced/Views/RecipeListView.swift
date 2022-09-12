@@ -14,6 +14,9 @@ struct RecipeListView: View {
     
     var body: some View {
         
+        // Once XCode comes out of Beta, use NavigationStack instead of NavigationView
+        // https://developer.apple.com/documentation/swiftui/migrating-to-new-navigation-types
+        
         NavigationView {
             List(model.recipes) { r in
                 
