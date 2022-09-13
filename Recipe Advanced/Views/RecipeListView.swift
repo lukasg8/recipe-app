@@ -11,7 +11,6 @@ struct RecipeListView: View {
     
     @ObservedObject var model = RecipeModel()
     
-    
     var body: some View {
         
         // Once XCode comes out of Beta, use NavigationStack instead of NavigationView
