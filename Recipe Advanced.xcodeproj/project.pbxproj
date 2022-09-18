@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C3EA1D828D77C4900BE632C /* Rational.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C3EA1D728D77C4900BE632C /* Rational.swift */; };
 		6C9707B228CF5F5300FD34F8 /* Recipe_AdvancedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9707B128CF5F5300FD34F8 /* Recipe_AdvancedApp.swift */; };
 		6C9707B628CF5F5300FD34F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C9707B528CF5F5300FD34F8 /* Assets.xcassets */; };
 		6C9707B928CF5F5300FD34F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C9707B828CF5F5300FD34F8 /* Preview Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C3EA1D728D77C4900BE632C /* Rational.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rational.swift; sourceTree = "<group>"; };
 		6C9707AE28CF5F5300FD34F8 /* Recipe Advanced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe Advanced.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C9707B128CF5F5300FD34F8 /* Recipe_AdvancedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe_AdvancedApp.swift; sourceTree = "<group>"; };
 		6C9707B528CF5F5300FD34F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,6 +48,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C3EA1D628D77C3900BE632C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				6C3EA1D728D77C4900BE632C /* Rational.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		6C9707A528CF5F5300FD34F8 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +81,7 @@
 				6C9707C128CF5F7E00FD34F8 /* Models */,
 				6C9707C228CF5F8500FD34F8 /* Services */,
 				6C9707C328CF5F8E00FD34F8 /* Data */,
+				6C3EA1D628D77C3900BE632C /* Utilities */,
 				6C9707B528CF5F5300FD34F8 /* Assets.xcassets */,
 				6C9707B728CF5F5300FD34F8 /* Preview Content */,
 			);
@@ -201,6 +212,7 @@
 			files = (
 				6C9707C528CF5FBC00FD34F8 /* RecipeListView.swift in Sources */,
 				6C9707CD28CF605A00FD34F8 /* DataService.swift in Sources */,
+				6C3EA1D828D77C4900BE632C /* Rational.swift in Sources */,
 				6C9707C928CF602900FD34F8 /* RecipeModel.swift in Sources */,
 				6C9707CB28CF604300FD34F8 /* Recipe.swift in Sources */,
 				6C9707B228CF5F5300FD34F8 /* Recipe_AdvancedApp.swift in Sources */,

@@ -9,8 +9,8 @@ import SwiftUI
 
 struct RecipeDetailView: View {
     
-    // unset because it will be determined by what the user taps on
     var recipe:Recipe
+    @State var selectedServings = 2
     
     var body: some View {
         
@@ -18,10 +18,24 @@ struct RecipeDetailView: View {
             
             VStack(alignment: .leading) {
                 
+                
                 // MARK: Recipe image
                 Image(recipe.image)
                     .resizable()
                     .scaledToFill()
+                
+                VStack (alignment: .leading) {
+                    Text("Select your serving size:")
+                    Picker("",selection: $selectedServings) {
+                        Text("2").tag(2)
+                        Text("4").tag(4)
+                        Text("6").tag(6)
+                        Text("8").tag(8)
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    .frame(width:200)
+                }
+                .padding(10)
                 
                 // MARK: Ingredients
                 VStack(alignment: .leading) {
@@ -30,7 +44,7 @@ struct RecipeDetailView: View {
                         .padding(.bottom,5)
                     
                     ForEach (recipe.ingredients) { ingredient in
-                        Text("- " + ingredient.name)
+                        Text("- " + RecipeModel.getPortion(ingredient: ingredient, recipeServings: recipe.servings, targetServings: selectedServings) + ingredient.name.lowercased())
                             .padding(.bottom, 3.0)
                     }
                 }.padding(.leading,7.0)
