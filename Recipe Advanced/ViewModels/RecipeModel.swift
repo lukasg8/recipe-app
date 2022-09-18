@@ -24,33 +24,33 @@ class RecipeModel: ObservableObject {
         var denominator = ingredient.denom ?? 1
         var wholePortions = 0
         
-        guard ingredient.num != nil else {
-            return String("")
-        }
         
-        denominator *= recipeServings
-        
-        numerator *= targetServings
-        
-        let divisor = Rational.greatestCommonDivisor(numerator, denominator)
-        numerator /= divisor
-        denominator /= divisor
-        
-        if numerator >= denominator {
-            wholePortions = numerator / denominator
-            numerator = numerator % denominator
-            portion += String(wholePortions)
-        }
-        
-        
-        if numerator > 0 {
-            portion += wholePortions > 0 ? " " : ""
-            portion += ("\(numerator)/\(denominator)")
+        if ingredient.num != nil {
+            denominator *= recipeServings
+            
+            numerator *= targetServings
+            
+            let divisor = Rational.greatestCommonDivisor(numerator, denominator)
+            numerator /= divisor
+            denominator /= divisor
+            
+            if numerator >= denominator {
+                wholePortions = numerator / denominator
+                numerator = numerator % denominator
+                portion += String(wholePortions)
+            }
+            
+            
+            if numerator > 0 {
+                portion += wholePortions > 0 ? " " : ""
+                portion += "\(numerator)/\(denominator)"
+            }
         }
         
         if var unit = ingredient.unit {
             
             if wholePortions > 1 {
+                
                 if unit.suffix(2) == "ch" {
                     unit += "es"
                 }
@@ -64,6 +64,7 @@ class RecipeModel: ObservableObject {
             }
             
             portion += ingredient.num == nil && ingredient.denom == nil ? "" : " "
+            portion += unit
         }
         
         return portion
